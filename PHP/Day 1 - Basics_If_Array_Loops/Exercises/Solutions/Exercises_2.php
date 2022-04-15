@@ -8,12 +8,36 @@
 
 */
 
+$fruits = array(
+    "Apple",
+    "Strawberry",
+    "Pineapple",
+    "Lemon"
+);
+
+echo $fruits[1];
+
+
+
 /* 
 - Exercise 2
 
 -- Create an associative array that contains the number in stock for each item: 20 T-Shirts, 10 Caps and 5 Shoes.
 -- Display the stock of caps.
 */
+
+$inventory = array(
+    "T-Shirts" => 20,
+    "Caps" => 10,
+    "Shoes" => 5
+);
+
+echo $inventory["Caps"] . '<br>';
+
+$inventory["Caps"] += 5;
+$inventory["Shoes"] += 20;
+
+echo $inventory['Shoes'];
 
 /*
 - Exercise 3
@@ -41,3 +65,24 @@ I need to be able to access a contact's information easily and quickly. There is
 You will have to display Ricardo's email at the end of the script.
 
 */
+
+// Initialize empty array
+$contact = array();
+
+$contact['Ricardo'] = [
+    'name' => 'ricardo',
+    'phone' => '036487487',
+    'email' => 'ricard@gmail.com'
+];
+
+$contact['Emmanuel'] = [
+    'name' => 'emmanuel',
+    'phone' => '036487487',
+    'email' => 'ricard@gmail.com'
+];
+
+echo '<pre>';
+var_dump($contact);
+echo '</pre>';
+
+echo $contact['Ricardo']['phone'];
