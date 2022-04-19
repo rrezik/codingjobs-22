@@ -16,14 +16,6 @@
 
 	*/
 
-// First loop : takes care of the rows/lines
-for ($row = 0; $row < 5; $row++) {
-	for ($col = 0; $col <= $row; $col++) {
-		echo '*';
-	}
-	echo '<br>';
-}
-
 	/*
 	- Exercise 2 : 
 		Write a PHP script which displays this pattern : 
