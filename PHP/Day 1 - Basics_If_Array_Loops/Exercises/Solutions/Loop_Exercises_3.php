@@ -22,7 +22,6 @@ for ($row = 0; $row < 5; $row++) {
 		echo '*';
 	}
 	echo '<br>';
-}
 
 	/*
 	- Exercise 2 : 
