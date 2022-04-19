@@ -102,24 +102,16 @@ for ($i = 1; $i <= 10; $i++) {
 	*/
 
 $array = [5, 20, 6, 2, 100];
-
-$max = $array[0]; // $max = 5
-$min = $array[0]; // $min = 5
 $posMax = 0;
 $posMin = 0;
 
-
 foreach ($array as $key => $value) {
-	if ($value > $max) {
-		$max = $value;
+	if ($value > $array[$posMax])
 		$posMax = $key;
-	}
 
-	if ($value < $min) {
-		$min = $value;
+	if ($value < $array[$posMin])
 		$posMin = $key;
-	}
 }
 
-echo 'Maximum is : ' . $max . ' / Position is : ' . $posMax . '<br>';
-echo 'Minimum is : ' . $min . ' / Position is : ' . $posMin . '<br>';
+echo 'Maximum is : ' . $array[$posMax] . ' / Position is : ' . $posMax . '<br>';
+echo 'Minimum is : ' . $array[$posMin] . ' / Position is : ' . $posMin . '<br>';
