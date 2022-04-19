@@ -15,18 +15,18 @@
 
 $array = array("Salad" => 1.03, "Tomato" => 2.3, "Oignon" => 1.85, "Red cabbage" => 0.85);
 //1. Sort by value 
-asort($array);
+// asort($array);
 
-echo '<pre>';
-var_dump($array);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($array);
+// echo '</pre>';
 
-// 2. Sort by key in descending order
-krsort($array);
+// // 2. Sort by key in descending order
+// krsort($array);
 
-echo '<pre>';
-var_dump($array);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($array);
+// echo '</pre>';
 
 // 3. Use a loop to calculate the total of Michel spendings.
 $total = 0;
@@ -34,7 +34,7 @@ foreach ($array as $value) {
 	$total += $value;
 }
 
-echo 'Total spendings : ' . $total . '<br>';
+// echo 'Total spendings : ' . $total . '<br>';
 
 
 /*
@@ -47,17 +47,20 @@ echo 'Total spendings : ' . $total . '<br>';
 		Once it's done, try to do it also with the while loop.
 	*/
 
+// Using For Loop
 $numbers = array();
 
 for ($i = 0; $i < 21; $i++) {
 	$numbers[$i] = $i;
-	// $i:0 / $numbers[0] = 0
-	// $i:1 / $numbers[1] = 1
-	// $i:2 / $numbers[2] = 2
-	//.... until reach 20
+	/* What happens each lap of the loop :
+		$i:0 / $numbers[0] = 0
+		$i:1 / $numbers[1] = 1
+		$i:2 / $numbers[2] = 2
+		.... until reach 20
+	*/
 }
 
-
+// Using While Loop
 $numbers = array();
 $x = 0;
 
@@ -79,11 +82,11 @@ for ($i = 1; $i <= 10; $i++) {
 	$multiTable[$i] = $i * 2;
 }
 
-echo '<pre>';
-var_dump($multiTable);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($multiTable);
+// echo '</pre>';
 
-	/*
+/*
 	-Exercise 4 :
 		Create an array of random numbers.
 		You can create it manually. For example $array = [5, 20, 6, -6, 100]
@@ -97,3 +100,26 @@ echo '</pre>';
 		3. CHALLENGE (optional)
 		You can only use 2 variables ($array and $i doesn't count).
 	*/
+
+$array = [5, 20, 6, 2, 100];
+
+$max = $array[0]; // $max = 5
+$min = $array[0]; // $min = 5
+$posMax = 0;
+$posMin = 0;
+
+
+foreach ($array as $key => $value) {
+	if ($value > $max) {
+		$max = $value;
+		$posMax = $key;
+	}
+
+	if ($value < $min) {
+		$min = $value;
+		$posMin = $key;
+	}
+}
+
+echo 'Maximum is : ' . $max . ' / Position is : ' . $posMax . '<br>';
+echo 'Minimum is : ' . $min . ' / Position is : ' . $posMin . '<br>';
