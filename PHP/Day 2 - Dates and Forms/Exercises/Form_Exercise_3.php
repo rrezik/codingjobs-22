@@ -12,7 +12,6 @@
 	            - Password
 	            - Confirmation of password
 	            - Checkbox "Subscribe to the newsletter"
-
 	
 			When the form is being submitted, we will display the summary of what the user entered.
 
