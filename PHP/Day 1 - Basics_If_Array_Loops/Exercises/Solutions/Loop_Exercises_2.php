@@ -15,18 +15,18 @@
 
 $array = array("Salad" => 1.03, "Tomato" => 2.3, "Oignon" => 1.85, "Red cabbage" => 0.85);
 //1. Sort by value 
-// asort($array);
+asort($array);
 
-// echo '<pre>';
-// var_dump($array);
-// echo '</pre>';
+echo '<pre>';
+var_dump($array);
+echo '</pre>';
 
 // // 2. Sort by key in descending order
-// krsort($array);
+krsort($array);
 
-// echo '<pre>';
-// var_dump($array);
-// echo '</pre>';
+echo '<pre>';
+var_dump($array);
+echo '</pre>';
 
 // 3. Use a loop to calculate the total of Michel spendings.
 $total = 0;
@@ -34,7 +34,7 @@ foreach ($array as $value) {
 	$total += $value;
 }
 
-// echo 'Total spendings : ' . $total . '<br>';
+echo 'Total spendings : ' . $total . '<br>';
 
 
 /*
@@ -82,9 +82,9 @@ for ($i = 1; $i <= 10; $i++) {
 	$multiTable[$i] = $i * 2;
 }
 
-// echo '<pre>';
-// var_dump($multiTable);
-// echo '</pre>';
+echo '<pre>';
+var_dump($multiTable);
+echo '</pre>';
 
 /*
 	-Exercise 4 :

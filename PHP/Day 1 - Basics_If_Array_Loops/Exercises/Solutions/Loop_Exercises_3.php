@@ -22,8 +22,8 @@ for ($row = 0; $row < 5; $row++) {
 		echo '*';
 	}
 	echo '<br>';
-
-	/*
+}
+/*
 	- Exercise 2 : 
 		Write a PHP script which displays this pattern : 
 		* 
@@ -38,6 +38,23 @@ for ($row = 0; $row < 5; $row++) {
 		* 
 
 	*/
+
+echo '<hr>';
+
+for ($row = 0; $row < 5; $row++) {
+	for ($col = 0; $col <= $row; $col++) {
+		echo '*';
+	}
+	echo '<br>';
+}
+
+// Same but opposite
+for ($row = 5; $row > 0; $row--) {
+	for ($col = 0; $col <= $row; $col++) {
+		echo '*';
+	}
+	echo '<br>';
+}
 
 	/*
 	- Final exercise - ONLY FOR THE BEASTS - BONUS
