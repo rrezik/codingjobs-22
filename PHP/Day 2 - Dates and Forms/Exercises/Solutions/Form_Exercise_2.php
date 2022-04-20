@@ -13,26 +13,30 @@
 
 	// Only if we clicked
 	if (!empty($_POST)) {
-		$number = $_POST['num'];
-		$multiTable = array();
+		if (is_numeric($number)) {
+			$number = $_POST['num'];
+			$multiTable = array();
 
-		// Calculate the multiplication table
-		for ($i = 1; $i <= 10; $i++) {
-			$multiTable[$i] = $i * $number;
-		}
+			// Calculate the multiplication table
+			for ($i = 1; $i <= 10; $i++) {
+				$multiTable[$i] = $i * $number;
+			}
 
-		// Display the multiplication table
-		echo '<ul>';
-		foreach ($multiTable as $key => $value) {
-			echo "<li>$key * $number = $value</li>";
+			// Display the multiplication table
+			echo '<ul>';
+			foreach ($multiTable as $key => $value) {
+				echo "<li>$key * $number = $value</li>";
+			}
+			echo '</ul>';
+		} else {
+			echo 'Must be a numeric value !';
 		}
-		echo '</ul>';
 	}
 
 	?>
 
 	<form action="" method="post">
-		<input type="text" name="num" placeholder="Your number"><br>
+		<input type="number" name="num" placeholder="Your number"><br>
 		<input type="submit" value="Multiply">
 	</form>
 </body>
