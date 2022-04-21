@@ -168,6 +168,18 @@ A prime number is an integer greater than 1 that can only be divided by itself a
 
 */
 
+echo isPrime(13);
+
+function isPrime($num)
+{
+	for ($i = 2; $i < $num / 2; $i++) {
+		if ($num % $i == 0)
+			return 'Not a prime number';
+	}
+
+	return 'It is a prime number';
+}
+
 
 
 echo '<hr>';
@@ -186,12 +198,6 @@ $b = 5;
 $c = $a;
 $a = $b;
 $b = $c;
-
-
-
-
-
-
 
 
 -- Exercice 7 :
