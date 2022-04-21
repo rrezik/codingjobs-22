@@ -44,6 +44,12 @@ Example :
 
 */
 
+function htmlImage($src)
+{
+	echo "<img src='$src' alt='' width='100px'>";
+}
+
+htmlImage('banana.png');
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
