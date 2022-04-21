@@ -91,6 +91,7 @@ Example :
 
 */
 
+
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 6 </p>';
 

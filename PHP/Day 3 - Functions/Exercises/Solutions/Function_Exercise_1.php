@@ -106,12 +106,20 @@ Ecrire une fonction qui :
     - Appeler votre fonction avec un seul nombre : 4
 
 Write a function that:
-    - Takes two numbers as parameter.
+    - Takes two numbers as arguments.
     - That returns the result of the multiplication of the two numbers
-    - All parameters must have a default value.
+    - All arguments must have a default value.
     - Call your function with the numbers 10 and 2.
     - Call your function with a single number: 4
 */
+
+function default_example($num1 = 1, $num2 = 1)
+{
+	return $num1 * $num2;
+}
+
+echo default_example(10, 2) . '<br>';
+echo default_example(4) . '<br>';
 
 
 
@@ -132,6 +140,23 @@ Example :
 
 */
 
+//kayak
+function isPalindrome($string)
+{
+	$len = strlen($string) - 1;
+
+	for ($i = 0; $i < $len / 2; $i++) {
+		// COMPARE LEFT SIDE with RIGHT SIDE
+		if ($string[$i] != $string[$len - $i]) {
+			return 'its not a palindrome';
+		}
+	}
+
+	return 'its a palindrome';
+}
+
+echo isPalindrome('kayak');
+
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 6 </p>';
 
@@ -149,8 +174,46 @@ echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 7 </p>';
 
 /*
+-- Exercise 7.5 : 
+
+Given two variables $a = 5 and $b = 3
+You need to write a script that switch the values
+Final result expected : 
+
+$a = 3;
+$b = 5;
+
+$c = $a;
+$a = $b;
+$b = $c;
+
+
+
+
+
+
+
+
 -- Exercice 7 :
 	Write a PHP function that return the reverse(mirror) of an array.
 	You can use only one other variable (simple, no array).
 	You can only use count() or strlen() function.
-*/
+
+
+	*/
+$array = [20, 9, 100, -5];
+
+function reverse($array)
+{
+	for ($i = 0; $i < count($array) / 2; $i++) {
+		$c = $array[count($array) - $i - 1];
+		$array[count($array) - $i - 1] = $array[$i];
+		$array[$i] = $c;
+	}
+
+	return $array;
+}
+
+echo '<pre>';
+var_dump(reverse($array));
+echo '</pre>';
