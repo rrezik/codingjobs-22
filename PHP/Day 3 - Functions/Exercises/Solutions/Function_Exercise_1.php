@@ -63,11 +63,34 @@ echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
 	    - Calculates the sum of Michel's expenses (already done)
 	3.2
 	Write a function that will:
-	- Take an array as input
+	- Take an array as argument
 	- Calculate the sum of the expenses of the array
 	- return the sum
 
 */
+
+function sum_expenses($array)
+{
+	$total = 0;
+	foreach ($array as $value) {
+		$total += $value;
+	}
+
+	return $total;
+}
+
+
+
+$array = array("Salad" => 1.03, "Tomato" => 2.3, "Oignon" => 1.85, "Red cabbage" => 0.85);
+$array2 = array(10, 5, 90, 100);
+
+echo 'Sum of first array is : ' . sum_expenses($array);
+echo 'Sum of second array is : ' . sum_expenses($array2);
+
+
+
+
+
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 4 </p>';
