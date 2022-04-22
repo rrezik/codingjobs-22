@@ -12,3 +12,4 @@
 $now = strtotime('now');
 $file_handle = fopen('last_access.log', 'w');
 fwrite($file_handle, $now);
+fclose($file_handle);
