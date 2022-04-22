@@ -9,6 +9,24 @@ echo '<p style="font-weight: 900"> EXERCISE 1 </p>';
         3. Create a second `submit` button, which displays the string entered in lowercase
 	
 */
+?>
+
+<form action="" method="POST">
+    <input type="text" name="myInput" placeholder="Type some text"><br>
+    <input type="submit" name="lcBtn" value="Lower Case">
+    <input type="submit" name="ucBtn" value="Upper Case">
+</form>
+
+<?php
+
+// Did I clicked on one of the buttons ?
+if (isset($_POST['lcBtn'])) {
+    echo '<div>' . strtolower($_POST['myInput']) . '</div>';
+} else if (isset($_POST['ucBtn'])) {
+    echo '<div>' . strtoupper($_POST['myInput']) . '</div>';
+}
+
+
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 2 </p>';
@@ -19,6 +37,9 @@ echo '<p style="font-weight: 900"> EXERCISE 2 </p>';
         $sentence = "This is a random sentence";
 */
 
+$sentence = "This is a random sentence";
+echo str_replace("random", "beautiful", $sentence);
+
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
 
@@ -28,4 +49,9 @@ echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
         explode () and count ()
     
     You can use the previous sentence to test : $sentence = "This is a random sentence";
-    */
+*/
+$sentence = "This is a random sentence";
+
+$myArray = explode(' ', $sentence);
+$lastPos = count($myArray) - 1;
+echo $myArray[$lastPos];
