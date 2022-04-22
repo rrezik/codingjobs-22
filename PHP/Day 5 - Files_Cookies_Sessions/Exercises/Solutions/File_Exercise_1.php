@@ -7,3 +7,8 @@
 
 	Choose the right setting to open the file
 	*/
+
+
+$now = strtotime('now');
+$file_handle = fopen('last_access.log', 'w');
+fwrite($file_handle, $now);
