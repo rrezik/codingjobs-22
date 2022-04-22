@@ -5,6 +5,7 @@ FizzBuzz($array);
 
 function FizzBuzz($array)
 {
+
 	foreach ($array as $key => $value) {
 		if ($value % 3 == 0 && $value % 5 == 0)
 			echo 'TicTac<br>';
