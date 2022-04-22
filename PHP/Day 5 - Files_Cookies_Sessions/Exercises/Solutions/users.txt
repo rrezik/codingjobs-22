@@ -1,0 +1,4 @@
+simon@gmail.com;1234
+ricardo@gmail.com;password
+fabrizio@gmail.com;ihatepasta
+tiago@gmail.com;tiago

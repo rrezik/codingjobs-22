@@ -5,8 +5,8 @@
 
 		2. In the 'signin.php' file, create a form with two input : email & password.
 
-		3. When submitting the form, check  :
-			- You find the email in users.txt file
+		3. When submitting the form, check :
+			- You search for the email in users.txt file
 			- If he exists, check that both email/password are matching.
 			- Display a message for both validations.
 
