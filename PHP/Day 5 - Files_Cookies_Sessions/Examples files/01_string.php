@@ -16,6 +16,9 @@ echo ucfirst($string) . '<br>';
 echo strpos($string, ',') . '<br>';
 echo strpos($string, 'beer') . '<br>';
 
+// Replace all occurences of a sub-string in a string
+echo str_replace('beer', 'coca-cola', $string);
+
 // Get the length of a string
 echo strlen($string) . '<br>';
 
