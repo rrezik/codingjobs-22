@@ -1,32 +1,64 @@
 Part 1 :
 
 - Get all the information from each books
+    SELECT *
+    FROM books
 
 - Get the title of each book
+    SELECT title
+    FROM books
 
 - Get the title and date of release of each book
+    SELECT title, date_of_release
+    FROM books
 
 Part 2 :
 
 - Retrieve the title of each book, sorted alphabetically
+    SELECT title
+    FROM books
+    ORDERY BY title
 
 - List all authors in alphabetical order and without duplicate
+    SELECT name
+    FROM authors
+    ORDERY BY name
 
 Part 3:
 
 - Recover the book with id 5
+    SELECT title
+    FROM books
+    WHERE id = 5
 
 - Find books released between 2000 and 2010
+    SELECT title
+    FROM books
+    WHERE date_of_release BETWEEN '2000-01-01' AND '2010-01-01'
 
 - Find books that did not come out between '2000' and '2010'
+    SELECT title
+    FROM books
+    WHERE date_of_release NOT BETWEEN '2000-01-01' AND '2010-01-01'
 
 Part 4:
 
 - Recover all books "Lord of the ring"
+    SELECT *
+    FROM books
+    WHERE title LIKE 'Lord of the ring%'
 
 - Get all the books from the author "Tolkien"
+    SELECT *
+    FROM books
+    WHERE author_id = 3
+    
+    // WHERE author LIKE '%Tolkien%'
 
 - Get all the author's books that are not "Tolkien"
+    SELECT *
+    FROM books
+    WHERE author_id != 3
 
 
 Part 5:
