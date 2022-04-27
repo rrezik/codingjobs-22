@@ -41,8 +41,6 @@ For this exercises, use union command.
 
 
 
-
-
 	- Get the total price for all books AND all novels (books and novels seperated).
 
 	SELECT 'books' as tablename, SUM(price)
