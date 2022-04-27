@@ -88,16 +88,35 @@ Part 6
 Part 7:
 
 - Get the sum of all the book's price (total amount of all books)
+    SELECT SUM(price) as TotalAmount
+    FROM books
 
 - Get the sum of books price PER author_id. 
+    SELECT author_id, SUM(price) as TotalAmount
+    FROM books
+    GROUP BY author_id
 
 - Get the total number of how many orders you had in your DB
+    SELECT COUNT(*)
+    FROM orders
 
 - Get the number of orders PER user_id
+    SELECT user_id, COUNT(id)
+    FROM orders
+    GROUP BY user_id
+
 
 Part 8:
 - Update all bookS with author_id = 2.
 Those books all cost now 10.
 
+    UPDATE books
+    SET price = 10
+    WHERE author_id = 2;
+
 - Update all bookS with author_id = 5.
 Those books all cost now 5 more euro than previous price.
+
+    UPDATE books
+    SET price = price + 5
+    WHERE author_id = 5;
