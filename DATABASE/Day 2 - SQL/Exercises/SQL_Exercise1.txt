@@ -7,11 +7,13 @@ Part 1 :
 - Get the title and date of release of each book
 
 Part 2 :
+
 - Retrieve the title of each book, sorted alphabetically
 
 - List all authors in alphabetical order and without duplicate
 
 Part 3:
+
 - Recover the book with id 5
 
 - Find books released between 2000 and 2010
