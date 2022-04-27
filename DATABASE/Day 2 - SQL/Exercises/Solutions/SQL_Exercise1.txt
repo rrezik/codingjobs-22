@@ -17,12 +17,12 @@ Part 2 :
 - Retrieve the title of each book, sorted alphabetically
     SELECT title
     FROM books
-    ORDERY BY title
+    ORDER BY title
 
 - List all authors in alphabetical order and without duplicate
-    SELECT name
+    SELECT DISTINCT name
     FROM authors
-    ORDERY BY name
+    ORDER BY name
 
 Part 3:
 
@@ -60,16 +60,30 @@ Part 4:
     FROM books
     WHERE author_id != 3
 
-
 Part 5:
 - Recover all books from newest to oldest
+    SELECT *
+    FROM books
+    ORDER BY date_of_release DESC
 
 - Count the number of books by each author
+    SELECT author_id, COUNT(*)
+    FROM books
+    GROUP BY author_id
+
 
 Part 6
-- List only the first 5 books
+- List only the first 5 books (based on id)
+    SELECT *
+    FROM books
+    LIMIT 5;
+
 
 - List the last 4 books (from newest to oldest)
+    SELECT *
+    FROM books
+    ORDER BY date_of_release DESC
+    LIMIT 4;
 
 Part 7:
 
@@ -77,7 +91,7 @@ Part 7:
 
 - Get the sum of books price PER author_id. 
 
-- Get the total number of how many orders you had in ur db
+- Get the total number of how many orders you had in your DB
 
 - Get the number of orders PER user_id
 
