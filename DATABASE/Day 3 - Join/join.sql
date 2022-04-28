@@ -8,4 +8,4 @@
 
 SELECT title, name, date_of_birth
 FROM authors a
-LEFT JOIN books b ON a.id = b.author_id
+INNER JOIN books b ON a.id = b.author_id
