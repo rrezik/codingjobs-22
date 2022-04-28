@@ -5,17 +5,39 @@ Part 1 :
 
 Part 2 :
 	- Retrieve the name and the year of birth for each author
+		SELECT EXTRACT(YEAR FROM date of birth), name
+		FROM authors
+		
 		
 	- Retrieve authors under 50 years old.
 
-	- Retrieve all the authors from British nationality
-	
-Part 3:
-	- Collect the book that has less sells
+		SELECT name 
+		FROM authors 
+		WHERE (YEAR(CURDATE())-YEAR(date_of_birth))<=50
 
-	- Collect the most popular book
+	- Retrieve all the authors from British nationality
+		SELECT name
+		FROM authors
+		WHERE nationality = 'British';
+
+
+Part 3:
+	- Collect the book that has least sales
+		SELECT title
+		FROM books
+		WHERE sells = (SELECT MIN(sells) FROM books);
+
+	- Collect the most sold book
+		SELECT *
+		FROM books
+		WHERE sells = (SELECT MAX(sells) FROM books);
+
 
 	- Collect the 3 most sold books
+		SELECT *
+		FROM books
+		ORDER BY sells DESC
+		LIMIT 3; 
 
 
 Part 4:
@@ -42,7 +64,7 @@ Part 6:
 Part 7:
 	- Get the author who makes the higher number of sells.
 
-	- Retrieve nationalities (author) who made over 200,000 views
+	- Retrieve nationalities (author) who made over 200,000 sells
 
 Part 8:
 	- All JK Rowling's books have made 20 more sells. Update these books.
