@@ -1,0 +1,48 @@
+Part 1 :
+
+    Import the library.sql file.
+	It will create a new Database about books.
+
+Part 2 :
+	- Retrieve the name and the year of birth for each author
+		
+	- Retrieve authors under 50 years old.
+
+	- Retrieve all the authors from British nationality
+	
+Part 3:
+	- Collect the book that has less sells
+
+	- Collect the most popular book
+
+	- Collect the 3 most sold books
+
+
+Part 4:
+	- Get all the books from the author "JK Rowling"
+
+	- Get all the author's books that are not "JK Rowling"
+
+	- Collect all books whose author has the letter 's' in his name or first name.
+
+Part 5:
+	- Get all the books from the youngest to the oldest author
+
+	- Collect the number of books by author (with the name of the author)
+
+Part 6:
+	- Get the sum of sells of all the books of the author 'George Lucas'
+
+	- Get the sum of sells of all books by author
+
+	- Get average sells of all books by author
+
+	- Get the sum of the sells by nationality (of the author)
+
+Part 7:
+	- Get the author who makes the higher number of sells.
+
+	- Retrieve nationalities (author) who made over 200,000 views
+
+Part 8:
+	- All JK Rowling's books have made 20 more sells. Update these books.

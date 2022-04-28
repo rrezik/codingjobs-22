@@ -1,51 +1,16 @@
 Part 1:
 	- For each book, Retrieve its title and the name of the author
 
-		SELECT title, name
-		FROM authors
-		INNER JOIN books ON authors.id = books.author_id
-
 	- For each book, get all the information about it and the name of the author
 
-		SELECT books.*, name
-		FROM authors
-		INNER JOIN books ON authors.id = books.author_id
-		
 	- Get the title of each book and the name of the author, sorted alphabetically on the title of the book.
 
-		SELECT title, name
-		FROM authors
-		INNER JOIN books ON authors.id = books.author_id
-		ORDER BY title;
-
 	- Same but sorted on the author's name.
-
-		SELECT title, name
-		FROM authors
-		INNER JOIN books ON authors.id = books.author_id
-		ORDER BY name;
-
 
 Part 2:
 	- Collect the number of books by author (with the name of the author)
 
-	
-		SELECT author_id, name, COUNT(*)
-		FROM authors
-		INNER JOIN books ON authors.id = books.author_id
-		GROUP BY author_id;
-
 Part 3:
 	- Get the sum of the price of all the books for one specific author (you choose which one)
 
-		SELECT authors.name, SUM(books.price)
-		FROM books
-		INNER JOIN authors ON authors.id = books.author_id
-		WHERE authors.name = 'JK Rowling';
-
 	- Get the sum of price of all books by author
-
-		SELECT authors.name, SUM(books.price)
-		FROM books
-		INNER JOIN authors ON authors.id = books.author_id
-		GROUP BY authors.id
