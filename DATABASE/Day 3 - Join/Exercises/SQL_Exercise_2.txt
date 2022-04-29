@@ -42,29 +42,87 @@ Part 3:
 
 Part 4:
 	- Get all the books from the author "JK Rowling"
+		SELECT title
+		FROM books
+		INNER JOIN authors ON authors.id = books.author_id
+		WHERE name = 'JK Rowling';
 
 	- Get all the author's books that are not "JK Rowling"
+		SELECT title
+		FROM books
+		INNER JOIN authors ON authors.id = books.author_id
+		WHERE name != 'JK Rowling';
 
 	- Collect all books whose author has the letter 's' in his name or first name.
+		SELECT title
+		FROM books
+		INNER JOIN authors ON authors.id = books.author_id
+		WHERE name LIKE '%s%';
 
 Part 5:
 	- Get all the books from the youngest to the oldest author
+		SELECT *
+		FROM books
+		INNER JOIN authors ON authors.id = books.author_id
+		ORDER BY date_of_birth DESC
 
 	- Collect the number of books by author (with the name of the author)
+		SELECT name, COUNT(books.id)
+		FROM books
+		INNER JOIN authors ON authors.id = books.author_id
+		GROUP BY author_id
 
 Part 6:
-	- Get the sum of sells of all the books of the author 'George Lucas'
+	- Get the sum of sells of all the books from the author 'JK Rowling'
+		SELECT SUM(sells)
+		FROM books
+		INNER JOIN authors ON books.author_id = authors.id
+		WHERE name LIKE '%Rowling%'
 
 	- Get the sum of sells of all books by author
+		SELECT name, SUM(sells)
+		FROM books
+		INNER JOIN authors ON books.author_id = authors.id
+		GROUP BY authors.id
 
 	- Get average sells of all books by author
+		SELECT name, AVG(sells)
+		FROM books
+		INNER JOIN authors ON books.author_id = authors.id
+		GROUP BY authors.id
 
-	- Get the sum of the sells by nationality (of the author)
+	- Get the sum of the sells by nationality
+		SELECT nationality, SUM(sells)
+		FROM books
+		INNER JOIN authors ON books.author_id = authors.id
+		GROUP BY nationality
+
 
 Part 7:
-	- Get the author who makes the higher number of sells.
+	- Get the author who makes the highest number of sales.
+		SELECT name, SUM(sells) as SumViews
+		FROM books
+		INNER JOIN authors ON books.author_id = authors.id
+		GROUP BY authors.id
+		ORDER BY SumViews DESC
+		LIMIT 1;
+
 
 	- Retrieve nationalities (author) who made over 200,000 sells
+		SELECT nationality, SUM(sells) as SumViews
+		FROM books
+		INNER JOIN authors ON books.author_id = authors.id
+		GROUP BY nationality
+		HAVING SumViews > 200000
+
 
 Part 8:
 	- All JK Rowling's books have made 20 more sells. Update these books.
+
+		UPDATE books
+		INNER JOIN authors ON books.author_id = authors.id
+		SET sells = sells + 20
+		WHERE name LIKE '%Rowling%'
+
+
+		
