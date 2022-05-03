@@ -14,6 +14,7 @@
     <?php
     $userName = '';
     $email = '';
+    $errors = array();
 
     // Make sure I clicked on the submit btn
     if (!empty($_POST)) {
@@ -21,32 +22,26 @@
         $email = htmlspecialchars(trim($_POST['email']));
         $password = $_POST['password'];
 
-        $errors = false;
+
 
         // Username : mandatory
-        if (empty($userName)) {
-            echo 'Username is mandatory.';
-            $errors = true;
-        }
+        if (empty($userName))
+            $errors['username'] = 'Username is mandatory.';
 
-        if (empty($email)) {
-            echo 'Email is mandatory.';
-            $errors = true;
-        } else if (!strpos($email, '@')) {
-            echo 'Email is not valid.';
-            $errors = true;
-        }
+        if (empty($email))
+            $errors['email'] = 'Email is mandatory.';
+        else if (!strpos($email, '@'))
+            $errors['email'] = 'Email is not valid.';
 
-        if (empty($password)) {
-            echo 'Password is mandatory.';
-            $errors = true;
-        } else if ($password != $_POST['cPassword']) {
-            echo 'Passwords are not matching.';
-            $errors = true;
-        }
+
+        if (empty($password))
+            $errors['password'] = 'Password is mandatory.';
+        else if ($password != $_POST['cPassword'])
+            $errors['password'] = 'Passwords are not matching.';
+
 
         // Inserts only if NO errors
-        if (!$errors) {
+        if (count($errors) == 0) {
             // 1. Connect to the D.B.
             $conn = mysqli_connect('localhost', 'root', '', 'movie_db');
 
@@ -66,6 +61,11 @@
                 echo 'Problem inserting into the DB.';
 
             mysqli_close($conn);
+        } else {
+            // This VS next to each input (cf below) 
+            // foreach ($errors as $key => $value) {
+            //     echo "$key : $value<br>";
+            // }
         }
     }
 
@@ -73,9 +73,16 @@
     ?>
 
     <form action="" method="POST">
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="text" name="email" placeholder="Email"><br>
-        <input type="password" name="password" placeholder="Password"><br>
+        <input type="text" name="username" placeholder="Username">
+        <?php if (isset($errors['username'])) echo $errors['username']; ?>
+        <br>
+
+        <input type="text" name="email" placeholder="Email">
+        <?php if (isset($errors['email'])) echo $errors['email']; ?><br>
+
+        <input type="password" name="password" placeholder="Password">
+        <?php if (isset($errors['password'])) echo $errors['password']; ?><br>
+
         <input type="password" name="cPassword" placeholder="Confirm Password"><br>
         <input type="submit" name="registerBtn" value="Register">
     </form>
