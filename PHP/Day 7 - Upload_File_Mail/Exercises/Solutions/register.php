@@ -23,7 +23,7 @@
     // echo '</pre>';
 
     // Make sure I clicked on the submit btn
-    if (!empty($_POST)) {
+    if (isset($_POST['registerBtn'])) {
         $userName = htmlspecialchars(trim($_POST['username']));
         $email = htmlspecialchars(trim($_POST['email']));
         $password = $_POST['password'];

@@ -15,7 +15,7 @@
 
     <?php
 
-    if (!empty($_POST)) {
+    if (isset($_POST['loginBtn'])) {
         $email = trim($_POST['email']);
         $password = $_POST['password'];
 
