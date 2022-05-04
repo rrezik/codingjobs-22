@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <?php require_once 'nav.php'; ?>
+
     <h1>Register</h1>
 
     <?php

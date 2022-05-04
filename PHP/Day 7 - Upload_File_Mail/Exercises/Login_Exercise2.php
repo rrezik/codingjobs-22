@@ -13,6 +13,6 @@
     Step 2. Edit 'login.php' page.
     Once the user is logged-in, create a cookie 'login' to true.
 
-    Step 3.	If the user is loggued-in, hide 'login' & 'register' links and display 'account' instead.
+    Step 3.	If the user is loggued-in, hide 'login' & 'register' links.
 
 */
