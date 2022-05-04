@@ -11,12 +11,12 @@
         Grab/Retrieve 'movies.php' and 'movie.php' in the same project.
 
     - Step 1 :
-        Grab the current page number using GET method
+        Grab the current page number using GET method.
     
     - Step 2 :
         Choose how much product per page you want.
         
     - Step 3 :
-        Change the query based on the current page
+        Change the query based on the current page.
         
-    */
+*/

@@ -1,5 +1,7 @@
 <?php
 
+$pageno = $_GET['page'];
+
 // 1. Connect to the D.B.
 include_once 'database.php';
 
@@ -9,7 +11,7 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 $movies = array();
 
 // True if you connected, false if not
-if($conn) {
+if ($conn) {
 
     // 2. Prepare the query
     $query = 'SELECT * FROM movies';
@@ -20,16 +22,16 @@ if($conn) {
     // I retrieved results but I need to fetch before using them
     // 4. Fetch the results as an associative array
     $movies = mysqli_fetch_all($results, MYSQLI_ASSOC);
-
 } else {
     echo 'Problem with connection !';
 }
 
 // Close the connection
-mysqli_close($conn);?>
+mysqli_close($conn); ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,10 +39,11 @@ mysqli_close($conn);?>
     <title>Document</title>
 
 </head>
-<body>
-    <?php include_once 'nav.html'; ?>
 
-    <?php foreach ($movies as $movie) :?>
+<body>
+    <?php include_once 'nav.php'; ?>
+
+    <?php foreach ($movies as $movie) : ?>
 
         <img src="<?= $movie['poster']; ?>" width="200px">
 
@@ -49,7 +52,7 @@ mysqli_close($conn);?>
             <a href="movie.php?id=<?= $movie['id']; ?>">
                 <?= $movie['title']; ?>
             </a>
-            
+
         </p>
 
         <p>
@@ -59,4 +62,5 @@ mysqli_close($conn);?>
         <hr>
     <?php endforeach; ?>
 </body>
+
 </html>
