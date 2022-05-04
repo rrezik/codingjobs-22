@@ -1,6 +1,13 @@
 <?php
 
-$pageno = $_GET['page'];
+// Retrieve current page number
+$pageno = 1;
+if (isset($_GET['page']))
+    $pageno = $_GET['page'];
+
+// Calculate the offset
+$moviePerPage = 2;
+$offset = ($pageno - 1) * $moviePerPage;
 
 // 1. Connect to the D.B.
 include_once 'database.php';
@@ -14,7 +21,7 @@ $movies = array();
 if ($conn) {
 
     // 2. Prepare the query
-    $query = 'SELECT * FROM movies';
+    $query = "SELECT * FROM movies LIMIT $moviePerPage OFFSET $offset";
 
     // 3. Executing the query (send query to DB)
     $results = mysqli_query($conn, $query);
