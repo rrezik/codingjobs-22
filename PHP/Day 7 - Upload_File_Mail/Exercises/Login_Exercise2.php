@@ -15,4 +15,9 @@
 
     Step 3.	If the user is loggued-in, hide 'login' & 'register' links.
 
+    Step 4. Create a logout button. When you click on it, it should remove the cookie previously created in the login process.
+
+    Step 5. Hide the logout button when user is not connected.
+    Display the button when user is connected
+
 */

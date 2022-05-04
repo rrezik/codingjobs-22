@@ -27,9 +27,12 @@
         // Check if user exists in the DB
         if ($user != null) {
             // Compare password from the form and the one from database
-            if (password_verify($password, $user['password']))
+            if (password_verify($password, $user['password'])) {
                 echo 'Welcome user';
-            else
+                setcookie('login', true, time() + (3600 * 24));
+                // Redirect to home page :
+                header('location: index.php');
+            } else
                 echo 'Password is wrong.';
         } else {
             echo 'Email not found. Try with another email.';
