@@ -61,6 +61,7 @@ function greetings($firstName)
 }
 
 greetings('simon');
+greetings('paul');
 
 $name = 'paul';
 greetings($name);
