@@ -88,6 +88,7 @@ $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 	<?php foreach ($movies as $movie) : ?>
 		<tr>
+			<td><img src="<?= $movie['poster']; ?>" width="100px"></td>
 			<td><?= $movie['title']; ?></td>
 			<td><?= $movie['views']; ?></td>
 			<td><?= $movie['name']; ?></td>
