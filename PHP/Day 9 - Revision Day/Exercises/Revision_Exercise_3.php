@@ -160,4 +160,4 @@ function searchContact($name)
 	}
 }
 
-$search = searchContact('ricardo');
+searchContact('ricardo');
