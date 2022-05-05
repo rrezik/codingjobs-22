@@ -12,6 +12,12 @@ $n = 2.5;
 $z = $x + $y;
 $k = $n * $y;
 
+echo gettype($x) . '<br>';
+echo gettype($y) . '<br>';
+echo gettype($z) . '<br>';
+echo gettype($n) . '<br>';
+echo gettype($k) . '<br>';
+
 
 /*
 	Show the date (in a nice format) for :
