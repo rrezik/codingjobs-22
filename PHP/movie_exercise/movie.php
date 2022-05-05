@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
 
 <body>
 
-    <?php include_once 'nav.html'; ?>
+    <?php include_once 'nav.php'; ?>
 
     <img src="<?= $movie['poster']; ?>" width="200px">
 
